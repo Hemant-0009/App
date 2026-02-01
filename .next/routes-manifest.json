@@ -1,0 +1,154 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/doctors/[id]",
+      "regex": "^/api/doctors/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/doctors/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/packages/[id]",
+      "regex": "^/api/packages/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/packages/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/tests/[testcode]",
+      "regex": "^/api/tests/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtestcode": "nxtPtestcode"
+      },
+      "namedRegex": "^/api/tests/(?<nxtPtestcode>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/report/[id]",
+      "regex": "^/report/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/report/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/results/[id]",
+      "regex": "^/results/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/results/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/add-doctor",
+      "regex": "^/add\\-doctor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/add\\-doctor(?:/)?$"
+    },
+    {
+      "page": "/add-package",
+      "regex": "^/add\\-package(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/add\\-package(?:/)?$"
+    },
+    {
+      "page": "/createtest",
+      "regex": "^/createtest(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/createtest(?:/)?$"
+    },
+    {
+      "page": "/doctors",
+      "regex": "^/doctors(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/doctors(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/find-patient",
+      "regex": "^/find\\-patient(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/find\\-patient(?:/)?$"
+    },
+    {
+      "page": "/license-request",
+      "regex": "^/license\\-request(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/license\\-request(?:/)?$"
+    },
+    {
+      "page": "/packages",
+      "regex": "^/packages(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/packages(?:/)?$"
+    },
+    {
+      "page": "/patientrecords",
+      "regex": "^/patientrecords(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/patientrecords(?:/)?$"
+    },
+    {
+      "page": "/testrecords",
+      "regex": "^/testrecords(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/testrecords(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

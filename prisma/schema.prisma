@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model PatientDetails {
+  id        String   @id
+  rgn       String?
+  Pt_name   String
+  Pt_age    Int
+  Pt_age_pm String   @default("Years")
+  Pt_sex    String
+  Pt_wn     String?
+  Pt_wn_rc  String?  @default("+91")
+  rt        String?  @default("Dr.")
+  dn        String?
+  dwn       String?
+  drwa_code String?  @default("+91")
+  details   Json
+  tests     Json
+  status    String?  @default("pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Test {
+  testcode       String  @id
+  testname       String
+  category       String  @default("Others")
+  testtype       test    @default(SINGLE)
+  price          Float   @default(0)
+  parameters     Json?
+  interpretation String? @default("")
+}
+
+model Doctor {
+  id                    String   @id @default(cuid())
+  name                  String
+  code                  String   @unique
+  whatsapp_no           String?
+  commission_rupee      Float    @default(0)
+  commission_percentage Float    @default(0)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model Package {
+  id        String   @id @default(cuid())
+  name      String
+  code      String   @unique
+  price     Float    @default(0)
+  tests     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum test {
+  GROUP
+  SINGLE
+}
