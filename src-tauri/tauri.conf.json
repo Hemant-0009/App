@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "identifier": "in.yourname.labsoftware",
   "build": {
-    "frontendDist": "",
+    "frontendDist": "../out",
     "devUrl": null
   },
   "app": {
